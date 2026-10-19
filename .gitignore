@@ -1,0 +1,15 @@
+.env
+.venv/
+data/
+runs/
+*.pt
+*.onnx
+__pycache__/
+# keep the in-service age model (the other .onnx/.pt files stay local)
+!models/age.onnx
+# personal / third-party photos used for testing and calibration: never publish
+test/
+Test2.jpeg
+test3.jpeg
+TestFace.png
+*.bak*

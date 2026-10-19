@@ -1,0 +1,11 @@
+# inference only (no torch/timm): training deps stay in the dev venv
+fastapi==0.143.3
+uvicorn==0.54.0
+httpx==0.28.1
+pydantic==2.14.1
+python-multipart==0.0.32
+numpy==2.4.6
+pillow==12.3.0
+onnxruntime==1.31.0
+mediapipe==1.1.1
+opencv-contrib-python==5.0.0.93

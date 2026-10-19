@@ -1,0 +1,12 @@
+.venv
+data
+runs
+test
+scripts
+*.bak*
+__pycache__
+*.pt
+models/age_*
+models/calibration_*
+progress.md
+flow.md
