@@ -121,3 +121,9 @@ Fixes to `app.py`: URL check now parses the URL (https, host exactly `res.cloudi
 Added `README.md` (HF Space config: sdk docker, app_port 7860). `requirements.txt` matches the tested venv.
 NOT tested: Docker build / HF Space itself (no Docker here). Throughput: ~2.2 s per scan, one at a time, so ~0.45 scans/s per Space on this CPU (HF CPU may be slower). First request after Space sleep is a cold start.
 To deploy: set Space secrets `SKINAI_API_KEY` and `CLOUDINARY_CLOUD_NAME`; `.gitignore` ignores `*.onnx` so push `models/age.onnx` via Git LFS (or un-ignore it); point TintKin at `POST <space>/v1/skin-analysis` with the `x-api-key` header.
+
+## Update 2026-10-19: integration guide + pushed to GitHub
+- `INTEGRATION_GUIDE.md` written (HF hosting, API reference, TintKin wiring via new `app/lib/skinai.js` + one-line swap at `actions.js:516`, score caveats). Guide is documentation only: TintKin code NOT modified yet.
+- Important: this replaces YouCam `analyzeSkin` only. YouCam `simulateSkin` (what-if) is still needed.
+- Repo pushed: https://github.com/muhammadalireal5-pixel/TintKin-Skin-Analysis (branch main, commit 764ec6d). Models via Git LFS (age.onnx, face_landmarker.task, selfie_multiclass tflite). Excluded: `.env`, `data/`, `test/` + Test*.jpg photos, other weights, `.venv`.
+- Not done: HF Space creation/push (needs user's HF account/token), Docker build test, TintKin code change.
